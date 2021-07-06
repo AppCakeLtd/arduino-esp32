@@ -78,9 +78,9 @@ static bool softap_config_equal(const wifi_config_t& lhs, const wifi_config_t& r
     if(lhs.ap.max_connection != rhs.ap.max_connection) {
         return false;
     }
-    if(lhs.ap.pairwise_cipher != rhs.ap.pairwise_cipher) {
-        return false;
-    }
+    // if(lhs.ap.pairwise_cipher != rhs.ap.pairwise_cipher) {
+    //     return false;
+    // }
     return true;
 }
 
@@ -98,7 +98,7 @@ void wifi_softap_config(wifi_config_t *wifi_config, const char * ssid=NULL, cons
     	wifi_config->ap.ssid_len = strlen(ssid);
     	if(password != NULL && password[0] != 0){
     		wifi_config->ap.authmode = authmode;
-    		wifi_config->ap.pairwise_cipher = WIFI_CIPHER_TYPE_CCMP; // Disable by default enabled insecure TKIP and use just CCMP.
+    		// wifi_config->ap.pairwise_cipher = WIFI_CIPHER_TYPE_CCMP; // Disable by default enabled insecure TKIP and use just CCMP.
     	    snprintf((char*)wifi_config->ap.password, 64, password);
     	}
     }

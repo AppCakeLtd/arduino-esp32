@@ -492,9 +492,9 @@ void uartSetBaudRate(uart_t* uart, uint32_t baud_rate)
     if(uart == NULL) {
         return;
     }
-    UART_MUTEX_LOCK();
-    uart_ll_set_baudrate(uart->dev, baud_rate);
-    UART_MUTEX_UNLOCK();
+    // UART_MUTEX_LOCK();
+    // uart_ll_set_baudrate(uart->dev, baud_rate);
+    // UART_MUTEX_UNLOCK();
 }
 
 static void uart_on_apb_change(void * arg, apb_change_ev_t ev_type, uint32_t old_apb, uint32_t new_apb)
